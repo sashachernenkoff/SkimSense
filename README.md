@@ -11,7 +11,7 @@ Human donor milk is preferred over formula because it contains immunoglobulins, 
 oligosaccharides and other components that are crucial for infant development and health, 
 particularly in premature or sick newborns. Thousands of infants, especially those in NICUs or 
 with mothers unable to produce sufficient milk, rely on donor human milk for essential 
-nutrition and antibodies.
+nutrition and biological components.
 
 Milk banks screen, process, and distribute donated breast milk to ensure safe and nutritious 
 feedings for infants in need, playing a vital role in public health care for newborns. Optimizing 
