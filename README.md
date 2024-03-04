@@ -99,14 +99,14 @@ Here, we list the files we have included as part of this repository.
 
 * `bin/` - The fully trained neural network stored as an hdf5 (`.h5`) file and the trained 
 scaler stored as a serialized Python object.
-    * `bin/model.h5` - The fully trained neural network
-    * `bin/scaler.save` - The trained scaler object
+    * `bin/model.h5` - Fully trained neural network
+    * `bin/scaler.save` - Trained scaler object
 * `data/` - Example input file and the data file used to train the neural network.
-    * `data/example_input.csv` - The example input file
-    * `data/training_data.csv` - The experimental data used to train the neural network
+    * `data/example_input.csv` - Example input file
+    * `data/training_data.csv` - Experimental data used to train the neural network
 * `src/` - Main source directory
     * `src/demo.sh` - Runs an example of the pipeline
-    * `src/model_train.py` - The file used for training the neural network
+    * `src/model_train.py` - Script for training the neural network
     * `src/SkimSense.py` - Primary file for making predictions on input
     * `src/utils.py` - Utility file containing tools for making predictions
 
