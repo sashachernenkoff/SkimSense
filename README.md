@@ -4,6 +4,8 @@ This repo is the home of `SkimSense`, a Python utility for predicting the nutrit
 human donor milk after reduction (removal of skim) using a feedforward neural network 
 implemented in TensorFlow.
 
+![SkimSense](https://i.imgur.com/kpKFXlO.png)
+
 
 ## More Info
 
