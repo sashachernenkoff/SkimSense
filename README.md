@@ -72,7 +72,7 @@ for each line of text, and write it to `/path/to/write/predictions/to.csv`.
 Alternatively, a single text snippet can be read from the command line:
 
 ```
-python txt2onto.py --text 'fat,carb,protein,cals,%reduction' --out /path/to/write/predictions/to.csv
+python SkimSense.py --text 'fat,carb,protein,cals,%reduction' --out /path/to/write/predictions/to.csv
 ```
 
 Which will write a single prediction to `/path/to/write/predictions/to.csv`.
@@ -107,7 +107,7 @@ scaler stored as a serialized Python object.
 * `src/` - Main source directory
     * `src/demo.sh` - Runs an example of the pipeline
     * `src/model_train.py` - The file used for training the neural network
-    * `src/txt2onto.py` - Primary file for making predictions on input
+    * `src/SkimSense.py` - Primary file for making predictions on input
     * `src/utils.py` - Utility file containing tools for making predictions
 
 
