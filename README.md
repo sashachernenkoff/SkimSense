@@ -9,16 +9,14 @@ implemented in TensorFlow.
 
 Human donor milk is preferred over formula because it contains immunoglobulins, hormones, 
 oligosaccharides and other components that are crucial for infant development and health, 
-particularly in premature or sick newborns.
-
-Thousands of infants, especially those in NICUs or with mothers unable to produce sufficient 
-milk, rely on donor human milk for essential nutrition and antibodies.
+particularly in premature or sick newborns. Thousands of infants, especially those in NICUs or 
+with mothers unable to produce sufficient milk, rely on donor human milk for essential 
+nutrition and antibodies.
 
 Milk banks screen, process, and distribute donated breast milk to ensure safe and nutritious 
-feedings for infants in need, playing a vital role in public health care for newborns.
-
-Optimizing the nutrition of donor milk supports the specific needs of vulnerable infants, 
-promoting better health outcomes and reducing the risks associated with premature birth and illness.
+feedings for infants in need, playing a vital role in public health care for newborns. Optimizing 
+the nutrition of donor milk supports the specific needs of vulnerable infants, promoting better 
+health outcomes and reducing the risks associated with premature birth and illness.
 
 SkimSense is a tool developed to assist milk banks in optimizing the nutrition of donated 
 breast milk to distribute to hospitals, pharmacies, and families. This tool reduces waste and 
