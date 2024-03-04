@@ -1,3 +1,13 @@
+# Human milk nutrition prediction after reduction
+#
+# Corresponding Author: Sasha Chernenkoff, sasha.chernenkoff@ucalgary.ca
+#
+# SkimSense.py - script containing functions utilized in SkimSense.py
+#
+# Author: Sasha Chernenkoff
+# Date: 3 March, 2024
+
+
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np

@@ -1,3 +1,13 @@
+# Human milk nutrition prediction after reduction
+#
+# Corresponding Author: Sasha Chernenkoff, sasha.chernenkoff@ucalgary.ca
+#
+# model_train - script for training the neural network
+#
+# Author: Sasha Chernenkoff
+# Date: 3 March, 2024
+
+
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np

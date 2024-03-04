@@ -88,7 +88,7 @@ sh demo.sh
 ```
 
 This will read in the example input file from `data/example_input.csv` and write predictions 
-to `out/example_output.txt`, and write predictions to `out/predictions_example_output.txt`.
+to `out/example_output.csv`.
 
 
 ## Overview of Repository

@@ -6,7 +6,6 @@
 #
 # Author: Sasha Chernenkoff
 # Date: 3 March, 2024
-# Updated:
 
 
 import numpy as np
@@ -68,7 +67,34 @@ if __name__ == "__main__":
         with open(args.out, 'w') as f:
             f.write(formatted_prediction)
 
+        print(f"Prediction successfully written to {args.out}")
+
     # If a file containing multiple lines of text is passed, make a word embedding for each one
     if args.file:
-        print("Making prediction for input file...")
-        # Get model prediction for file
+        print("Making predictions for input file...")
+        all_predictions = []  # To store predictions for each line
+
+        with open(args.file, 'r') as file:
+            for line in file:
+                # Parse input line
+                try:
+                    features = np.array([float(x) for x in line.strip().split(',')]).reshape(1, -1)
+                    if features.shape[1] != 5:
+                        raise ValueError("Each line must contain exactly 5 features")
+                except ValueError as e:
+                    print(f"Error processing line: {line.strip()} - {e}")
+                    continue  # Skip to the next line
+
+                # Make prediction for the current line
+                predicted_nutrition = predict_nutrition(features)
+
+                # Format the prediction
+                formatted_prediction = ",".join(["%.3f" % number for number in np.round(predicted_nutrition, 3)])
+                all_predictions.append(formatted_prediction)
+
+        # Write all formatted predictions to the output file
+        with open(args.out, 'w') as f:
+            for prediction in all_predictions:
+                f.write(prediction + "\n")
+
+        print(f"Predictions successfully written to {args.out}")
