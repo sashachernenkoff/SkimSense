@@ -42,12 +42,12 @@ if __name__ == "__main__":
     if args.out is None:
         raise ValueError("Must specify output file with --out.")
 
-    # If only a single string was passed using --text. then make prediction and write to file
+    # If only a single string was passed using --text, then make prediction and write to file
     if args.text:
         print("Making prediction for input text...")
 
         # Parse input text
-        # Check that 5 features were give (fat, carbohydrates, protein, calories, % reduction)
+        # Check that 5 features were given (fat, carbohydrates, protein, calories, % reduction)
         try:
             features = np.array([float(x) for x in args.text.split(',')]).reshape(1, -1)
             if features.shape[1] != 5:
@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
         print(f"Prediction successfully written to {args.out}")
 
-    # If a file containing multiple lines of text is passed, make a word embedding for each one
+    # If a file containing multiple lines is passed, make all predictions and write to file
     if args.file:
         print("Making predictions for input file...")
         all_predictions = []  # To store predictions for each line
@@ -77,6 +77,7 @@ if __name__ == "__main__":
         with open(args.file, 'r') as file:
             for line in file:
                 # Parse input line
+                # Check that 5 features were given (fat, carbohydrates, protein, calories, % reduction)
                 try:
                     features = np.array([float(x) for x in line.strip().split(',')]).reshape(1, -1)
                     if features.shape[1] != 5:
