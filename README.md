@@ -1,15 +1,15 @@
 # SkimSense
 
 This repo is the home of `SkimSense`, a Python utility for predicting the nutrition of 
-human donor milk after reduction (removal of skim) using a feedforward neural network 
-implemented in TensorFlow.
+donor human milk after reduction (removal of skim) using a feedforward neural network 
+implemented with TensorFlow.
 
 ![SkimSense](https://i.imgur.com/kpKFXlO.png)
 
 
 ## More Info
 
-Human donor milk is preferred over formula because it contains optimal nutrition as well as 
+Human milk is preferred over formula because it contains optimal nutrition as well as 
 immunoglobulins, hormones, oligosaccharides and other components that are crucial for infant 
 development and health, particularly in premature or sick newborns. Thousands of infants, 
 especially those in NICUs or with mothers unable to produce sufficient milk, rely on donor 
@@ -38,8 +38,9 @@ requirements have been verified for python version 3.11.0.
 
 #### Input
 
-The input should be a .csv file with each line representing a reduction to predict. 
-Each line should contain five numerical features, detailed as:
+The input should be a .csv file with each line representing a starting nutrition 
+profile to make predictions on, as well as a desired reduction percentage. 
+Thus, each line should contain five numerical features, detailed as:
 
 * **Fat**: A positive numeric value representing the fat content.
 * **Carbohydrates**: A positive numeric value representing the carbohydrate content.
