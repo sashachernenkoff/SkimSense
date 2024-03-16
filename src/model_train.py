@@ -6,6 +6,7 @@
 #
 # Author: Sasha Chernenkoff
 # Date: 3 March, 2024
+# Modified: 16 March, 2024
 
 
 import joblib
@@ -13,6 +14,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+from tensorflow.keras import regularizers
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -21,8 +23,8 @@ from sklearn.preprocessing import StandardScaler
 data = pd.read_csv('../data/training_data.csv', header=None)
 
 # Split data into features (X) and targets (y)
-# X: fat, carbs, protein, calories, % reduction
-# y: fat, carbs, protein, calories
+# X: (pre-reduction) fat, protein, carbs, calories, % reduction
+# y: (post-reduction) fat, protein, carbs, calories
 X = data.iloc[:, :5].values  # Feature matrix
 y = data.iloc[:, 5:].values  # Target matrix
 
@@ -35,17 +37,22 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 
 # Build the model
 model = tf.keras.Sequential([
-    tf.keras.layers.Dense(128, activation='relu', input_shape=(X_train.shape[1],)),
-    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
+    tf.keras.layers.Dropout(0.6),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dropout(0.6),
     tf.keras.layers.Dense(y_train.shape[1])
 ])
 
-model.compile(optimizer='adam',
+model.compile(tf.keras.optimizers.legacy.Adam(learning_rate=0.0005),
               loss='mean_squared_error',
               metrics=['mean_squared_error'])
 
+# Early stopping
+early_stopping = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
+
 # Train the model
-fit = model.fit(X_train, y_train, epochs=500, validation_split=0.2, verbose=1)
+fit = model.fit(X_train, y_train, epochs=500, validation_split=0.2, verbose=1, callbacks=[early_stopping])
 
 # Evaluate the model
 test_loss, test_mse = model.evaluate(X_test, y_test, verbose=1)

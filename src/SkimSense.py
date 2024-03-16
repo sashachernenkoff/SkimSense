@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # Create structure for reading file/text from the command line and writing output to file
     parser = AP()
     parser.add_argument("--text", metavar="Input Text",
-                        help="Starting nutrition of milk in form protein,fat,carbohydrates,calories.")
+                        help="Starting nutrition of milk in form fat,protein,carbohydrates,calories,%reduction.")
     parser.add_argument("--file", metavar="/path/to/file/in_file.txt", type=str,
                         help="Path to file containing starting nutritions of milk to make prediction for. " +
                              "One prediction will be made for each line in input file.")

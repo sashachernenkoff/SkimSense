@@ -42,10 +42,10 @@ The input should be a .csv file with each line representing a starting nutrition
 profile to make predictions on, as well as a desired reduction percentage. 
 Thus, each line should contain five numerical features, detailed as:
 
-* **Fat**: A positive numeric value representing the fat content.
+* **Fat**: A positive numeric value representing the fat content (%).
+* * **Protein**: A positive numeric value representing the protein content (g/dL).
 * **Carbohydrates**: A positive numeric value representing the carbohydrate content.
-* **Protein**: A positive numeric value representing the protein content.
-* **Calories**: A positive numeric value representing the caloric content.
+* **Calories**: A positive numeric value representing the caloric content (cal/oz).
 * **Percentage reduction**: A numeric value ranging from 0 to 100, representing the 
 desired percentage reduction.
 
@@ -53,9 +53,9 @@ These features must be provided in the order specified above and separated by co
 Below is a sample of the expected input format:
 
 ```
-2.85,7.48,1.09,18.07,10
-2.27,7.27,1.05,16.2,50
-1.35,7.07,0.96,13.35,20
+2.85,1.09,7.48,18.07,10
+2.27,1.05,7.27,16.2,50
+1.35,0.96,7.07,13.35,20
 ```
 
 
@@ -73,7 +73,7 @@ for each line of text, and write it to `/path/to/write/predictions/to.csv`.
 Alternatively, a single text snippet can be read from the command line:
 
 ```
-python SkimSense.py --text 'fat,carb,protein,cals,%reduction' --out /path/to/write/predictions/to.csv
+python SkimSense.py --text 'fat,protein,carb,cals,%reduction' --out /path/to/write/predictions/to.csv
 ```
 
 Which will write a single prediction to `/path/to/write/predictions/to.csv`.
